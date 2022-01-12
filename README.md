@@ -8,7 +8,7 @@ mybatis dalgen command-line tool
 > 1. Linux 或 MacOS
 > 2. python java
  
-> Windows 用户请直接执行 jar 文件: `java -jar mydalgen-1.0.1-all.jar -c generatorConfig.xml -o true`
+> Windows 用户请直接执行 jar 文件: `java -jar mydalgen-1.0.2-all.jar -c generatorConfig.xml -o true`
 
 3. 下载[最新版本](https://github.com/terasum/mydalgen/releases/)的发布包
 
@@ -18,7 +18,7 @@ tar zxf mydalgen.tar.gz -C yourpath
 ```
 3. 进入解压出来之后的路径即可使用
 ```shell
-cd mydalgen-v1.0.1
+cd mydalgen-v1.0.2
 chmod a+x mydalgen
 
 mydalgen -c generatorConfig.xml -o true
@@ -99,5 +99,5 @@ mydalgen -c generatorConfig.xml -o true
 ## 想要随处可用?
 如果想作为命令行工具随处可用，可参考如下步骤
 1. 将下载解压后的包工具存放在 `$HOME/.local/lib`
-2. `ln -sf $HOME/.local/lib/mydalgen-v1.0.1/mydalgen $HOME/.local/bin/mydalgen`
+2. `ln -sf $HOME/.local/lib/mydalgen-v1.0.2/mydalgen $HOME/.local/bin/mydalgen`
 3. `echo $PATH=$PATH:$HOME/.local/bin >> $HOME/.bashrc # or .zshrc`

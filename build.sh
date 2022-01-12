@@ -4,9 +4,11 @@ version=$(cat pom.xml | grep '##project version' | awk -F '>' '{print $2}' | awk
 
 mkdir -p dist/mydalgen-"v${version}"
 cp -r target/mydalgen-$version-jar-with-dependencies.jar dist/mydalgen-"v${version}"/mydalgen-$version-all.jar
+cp -r generatorConfig.xml dist/mydalgen-"v${version}"/
 
 cat <<EOF > dist/mydalgen-"v${version}"/mydqlgen
 #!/bin/sh
+SCRIPT_DIR=\$(dirname "\$(python -c 'import os, sys; print(os.path.realpath(sys.argv[1]))' \$0)")
 while getopts c:o: OPT; do
   case \${OPT} in
     c) in_file=\${OPTARG}
@@ -31,7 +33,7 @@ if [ -z "\${in_file}" -o ! -f "\${in_file}" ]; then
   exit 1
 fi
 
-java -jar mydalgen-1.0-all.jar -c "\${in_file}" -o "\${override}"
+java -jar \${SCRIPT_DIR}/mydalgen-${version}-all.jar -c "\${in_file}" -o "\${override}"
 
 EOF
 

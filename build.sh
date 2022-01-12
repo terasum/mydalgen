@@ -1,5 +1,5 @@
 #!/bin/sh
-mvn clean package -Dmaven.test.skip=true
+mvn clean package --file pom.xml -Dmaven.test.skip=true
 version=$(cat pom.xml | grep '##project version' | awk -F '>' '{print $2}' | awk -F '<' '{print $1}')
 
 mkdir -p dist/bin

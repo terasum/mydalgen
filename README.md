@@ -4,10 +4,15 @@ mybatis dalgen command-line tool
 本工具可以自动生成DAL层代码，主要是封装了 mybatis-generator 工具
 
 ## 使用方式
+> 前置依赖 
+> 1. Linux 或 MacOS
+> 2. python java
+ 
+> Windows 用户请直接执行 jar 文件: `java -jar mydalgen-1.0.1-all.jar -c generatorConfig.xml -o true`
 
-1. 下载[最新版本](https://github.com/terasum/mydalgen/releases/)的发布包
+3. 下载[最新版本](https://github.com/terasum/mydalgen/releases/)的发布包
 
-2. 解压至任意路径
+4. 解压至任意路径
 ```shell
 tar zxf mydalgen.tar.gz -C yourpath
 ```
@@ -89,9 +94,10 @@ mydalgen -c generatorConfig.xml -o true
 </generatorConfiguration>
 ```
 
+注意，配置文件内各个配置项的顺序不可以修改，否则会报错
 
 ## 想要随处可用?
 如果想作为命令行工具随处可用，可参考如下步骤
-1. 将下载解压后的包工具存放在 $HOME/.local/lib
+1. 将下载解压后的包工具存放在 `$HOME/.local/lib`
 2. `ln -sf $HOME/.local/lib/mydalgen-v1.0.1/mydalgen $HOME/.local/bin/mydalgen`
 3. `echo $PATH=$PATH:$HOME/.local/bin >> $HOME/.bashrc # or .zshrc`

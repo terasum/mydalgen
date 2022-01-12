@@ -1,6 +1,6 @@
 name: JavaCI
 
-on: [push,merge]
+on: [push]
 
 jobs:
   build:

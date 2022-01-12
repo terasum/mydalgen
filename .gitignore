@@ -26,3 +26,4 @@ target/
 *.iml
 out
 *.log
+dist

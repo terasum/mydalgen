@@ -98,6 +98,6 @@ mydalgen -c generatorConfig.xml -o true
 
 ## 想要随处可用?
 如果想作为命令行工具随处可用，可参考如下步骤
-1. 将下载解压后的包工具存放在 `$HOME/.local/lib`
+1. 将下载解压后的包工具存放在 `$HOME/.local/lib && chmod +x $HOME/.local/lib/mydalgen-v1.0.2/mydalgen`
 2. `ln -sf $HOME/.local/lib/mydalgen-v1.0.2/mydalgen $HOME/.local/bin/mydalgen`
 3. `echo $PATH=$PATH:$HOME/.local/bin >> $HOME/.bashrc # or .zshrc`

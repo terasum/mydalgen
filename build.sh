@@ -2,10 +2,10 @@
 mvn clean package --file pom.xml -Dmaven.test.skip=true
 version=$(cat pom.xml | grep '##project version' | awk -F '>' '{print $2}' | awk -F '<' '{print $1}')
 
-mkdir -p dist/bin
-cp -r target/mydalgen-$version-jar-with-dependencies.jar dist/bin/mydalgen-$version-all.jar
+mkdir -p dist/mydalgen-"v${version}"
+cp -r target/mydalgen-$version-jar-with-dependencies.jar dist/mydalgen-"v${version}"/mydalgen-$version-all.jar
 
-cat <<EOF > dist/bin/mydqlgen
+cat <<EOF > dist/mydalgen-"v${version}"/mydqlgen
 #!/bin/sh
 while getopts c:o: OPT; do
   case \${OPT} in
@@ -35,4 +35,4 @@ java -jar mydalgen-1.0-all.jar -c "\${in_file}" -o "\${override}"
 
 EOF
 
-tar -C dist -zcf dist/mydalgen-$version.tar.gz bin
+tar -C dist -zcf dist/mydalgen.tar.gz mydalgen-"v${version}"

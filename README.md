@@ -10,9 +10,9 @@ mybatis dalgen command-line tool
  
 > Windows 用户请直接执行 jar 文件: `java -jar mydalgen-1.0.2-all.jar -c generatorConfig.xml -o true`
 
-3. 下载[最新版本](https://github.com/terasum/mydalgen/releases/)的发布包
+1. 下载[最新版本](https://github.com/terasum/mydalgen/releases/)的发布包
 
-4. 解压至任意路径
+2. 解压至任意路径
 ```shell
 tar zxf mydalgen.tar.gz -C yourpath
 ```
@@ -24,6 +24,41 @@ chmod a+x mydalgen
 mydalgen -c generatorConfig.xml -o true
 # -c 为生成配置
 # -o 是否覆盖现有生成文件
+```
+4. 在 webapp 项目的 pom.xml 文件当中，加入如下依赖：
+注意: 下面的版本都是比较新的版本，mydalgen 就是依赖这些版本的，建议保持一致(2022-01-10)
+
+```xml
+        <!--mybatis-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.2.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <!--pagehelper-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.4.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 ```
 
 ## generatorConfig.xml 说明

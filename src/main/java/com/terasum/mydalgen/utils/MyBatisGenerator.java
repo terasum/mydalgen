@@ -12,7 +12,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/*
  * @author chenquan
  */
 public class MyBatisGenerator {
@@ -71,23 +71,23 @@ public class MyBatisGenerator {
     myBatisGenerator.generate(
         new ProgressCallback() {
           public void introspectionStarted(int i) {
-            LOG.info("[dalgenx] introspectionStarted {}", i);
+            LOG.info("introspectionStarted: {}", i);
           }
 
           public void generationStarted(int i) {
-              LOG.info("[dalgenx] generationStarted {}", i);
+              LOG.info("generationStarted: {}", i);
           }
 
           public void saveStarted(int i) {
-            LOG.info("[dalgenx] saveStarted {}", i);
+            LOG.info("saveStarted: {}", i);
           }
 
           public void startTask(String s) {
-            LOG.info("[dalgenx] startTask {}", s);
+            LOG.info("start generate task: {}", s);
           }
 
           public void done() {
-            LOG.info("[dalgenx] done\n");
+            LOG.info("generate done\n");
           }
 
           public void checkCancel() {}

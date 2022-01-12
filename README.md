@@ -26,6 +26,7 @@ mydalgen -c generatorConfig.xml -o true
 # -o 是否覆盖现有生成文件
 ```
 4. 在 webapp 项目的 pom.xml 文件当中，加入如下依赖：
+
 注意: 下面的版本都是比较新的版本，mydalgen 就是依赖这些版本的，建议保持一致(2022-01-10)
 
 ```xml

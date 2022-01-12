@@ -43,7 +43,7 @@ mydalgen -c generatorConfig.xml -o true
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
-        <!-- 通用mapper所在目录 -->
+        <!-- 通用mapper 插件 -->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
             <property name="caseSensitive" value="true"/>
